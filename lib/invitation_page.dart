@@ -423,7 +423,7 @@ class _DetailsSection extends StatelessWidget {
         children: [
           Text(
             isAr ? 'محطات رحلتنا' : 'Celebration Details',
-            style: GoogleFonts.jost(fontSize: 11, letterSpacing: 3.5, fontWeight: FontWeight.w700, color: AppColors.blueLight),
+            style: GoogleFonts.jost(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.blueLight),
           ),
           const SizedBox(height: 10),
           Text(

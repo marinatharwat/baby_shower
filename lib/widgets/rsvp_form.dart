@@ -234,7 +234,7 @@ class _RsvpFormState extends State<RsvpForm> {
     final titleText = isAr ? 'شكراً $_submittedName! 💙' : 'Thank you, $_submittedName! 💙';
     final bodyText = _attending
         ? (isAr
-            ? 'وصلت رسالتك وفرّحت قلبنا 🎉\nفي انتظار فرحتنا بيك يوم سبوع كيرلس!'
+            ? 'وصلت رسالتك وفرّحت قلبنا 🎉\nفي انتظار فرحتنا بيك يوم سبوع جان!'
             : 'Your message reached us and filled our hearts 🎉\nWe cannot wait to celebrate with you!')
         : (isAr
             ? 'وصلت رسالتك 💙\nسنشتاق لكم، ونحمل لكم المحبة دائماً.'
