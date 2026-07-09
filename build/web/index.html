@@ -1,15 +1,271 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 <head>
-  <base href="/">
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="سبوع كيرلس - Kerolos Sebou Invitation">
-  <title>سبوع كيرلس 🐻</title>
-  <link rel="manifest" href="manifest.json">
-  <script src="flutter_bootstrap.js" async></script>
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Jan's Baby Shower">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Jan">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jan — Baby Shower Invitation</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="baby_logo.jpeg"/>
+
+    <link rel="preload" href="assets/assets/images/3.png" as="image">
+
+    <!-- Open Graph / WhatsApp / Facebook preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jan — Baby Shower Invitation">
+    <meta property="og:description" content="you have received an invitation to Jan's baby shower">
+    <meta property="og:image" content="https://your-baby-shower-site.vercel.app/baby_logo.jpeg">
+    <meta property="og:url" content="https://your-baby-shower-site.vercel.app/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jan — Baby Shower Invitation">
+    <meta name="twitter:description" content="you have received an invitation to Jan's baby shower">
+    <meta name="twitter:image" content="https://your-baby-shower-site.vercel.app/baby_logo.jpeg">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+          background: #FAF3E6;
+          font-family: Georgia, serif;
+        }
+
+        #loading {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          background: #FAF3E6;
+          z-index: 9999;
+          transition: opacity 0.7s ease;
+        }
+
+        #loading.hide {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .stars {
+          position: relative;
+          width: 180px;
+          height: 24px;
+          margin-bottom: 4px;
+        }
+
+        .stars span {
+          position: absolute;
+          font-size: 13px;
+          color: #A8D4EC;
+          animation: twinkle 1.6s ease-in-out infinite;
+        }
+
+        .stars span:nth-child(1) { left: 8px;   top: 8px; animation-delay: 0s; }
+        .stars span:nth-child(2) { left: 58px;  top: 0px; animation-delay: 0.3s; font-size: 9px; }
+        .stars span:nth-child(3) { left: 102px; top: 10px; animation-delay: 0.6s; }
+        .stars span:nth-child(4) { left: 146px; top: 2px; animation-delay: 0.9s; font-size: 9px; }
+
+        .baby-icon {
+          font-size: 60px;
+          margin-bottom: 28px;
+          animation: bounce 1.8s ease-in-out infinite;
+          filter: drop-shadow(0 8px 14px rgba(58, 106, 140, 0.25));
+        }
+
+        .text1 {
+          font-size: 22px;
+          font-weight: bold;
+          color: #3A6A8C;
+          margin-bottom: 10px;
+          opacity: 0;
+          animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .text2 {
+          font-size: 28px;
+          font-style: italic;
+          color: #3A6A8C;
+          margin-bottom: 16px;
+          opacity: 0;
+          animation: fadeInUp 1.2s ease forwards 0.9s;
+        }
+
+        .heart-small {
+          font-size: 18px;
+          color: #7BB8D8;
+          margin-top: 4px;
+          opacity: 0;
+          animation: fadeInUp 0.8s ease forwards 1.5s,
+                     pulse 1.5s infinite ease-in-out 2.3s;
+        }
+
+        .loading-label {
+          font-size: 13px;
+          font-style: italic;
+          letter-spacing: 3px;
+          color: #A8D4EC;
+          margin-top: 28px;
+          margin-bottom: 10px;
+          opacity: 0;
+          animation: fadeInUp 0.8s ease forwards 1.8s;
+        }
+
+        .loading-label span {
+          display: inline-block;
+          animation: dotPulse 1.4s infinite ease-in-out;
+        }
+        .loading-label span:nth-child(2) { animation-delay: 0.2s; }
+        .loading-label span:nth-child(3) { animation-delay: 0.4s; }
+
+        .progress-wrap {
+          width: 200px;
+          height: 3px;
+          background: #EDD9AA;
+          border-radius: 10px;
+          overflow: hidden;
+          opacity: 0;
+          animation: fadeInUp 0.8s ease forwards 1.8s;
+        }
+
+        .progress-bar {
+          height: 100%;
+          width: 0%;
+          background: linear-gradient(90deg, #A8D4EC, #3A6A8C);
+          border-radius: 10px;
+          transition: width 0.4s ease;
+        }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+          0%   { transform: scale(0.9); }
+          50%  { transform: scale(1.2); }
+          100% { transform: scale(0.9); }
+        }
+
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0) rotate(-3deg); }
+          50%      { transform: translateY(-14px) rotate(3deg); }
+        }
+
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.25; transform: scale(0.8); }
+          50%      { opacity: 1;    transform: scale(1.15); }
+        }
+
+        @keyframes dotPulse {
+          0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
+          40%            { opacity: 1;   transform: translateY(-3px); }
+        }
+    </style>
 </head>
+
 <body>
+
+<div id="loading">
+    <div class="stars">
+        <span>✦</span><span>✧</span><span>✦</span><span>✧</span>
+    </div>
+    <div class="baby-icon">🍼</div>
+    <div class="text1">you have received an invitation</div>
+    <div class="text2">to Jan's Baby Shower</div>
+    <div class="loading-label">
+        loading<span>.</span><span>.</span><span>.</span>
+    </div>
+    <div class="progress-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+</div>
+
+<script src="flutter_bootstrap.js" async></script>
+
+<script>
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = null;
+    }
+</script>
+
+<script>
+    const bar = document.getElementById('progress-bar');
+    let progress = 0;
+    let interval = null;
+
+    interval = setInterval(() => {
+        if (progress < 85) {
+            progress += Math.random() * 4;
+            if (progress > 85) progress = 85;
+            bar.style.width = progress + '%';
+        }
+    }, 200);
+
+    const heroImg = new Image();
+    heroImg.src = 'assets/assets/images/3.png';
+
+   let flutterReady = false;
+let imageReady = false;
+
+const splashStartTime = Date.now();
+const minSplashDuration = 3000; // 3 ثواني
+
+function tryHide() {
+  if (!flutterReady || !imageReady) return;
+
+  const elapsed = Date.now() - splashStartTime;
+  const remainingTime = Math.max(
+    0,
+    minSplashDuration - elapsed,
+  );
+
+  setTimeout(() => {
+    clearInterval(interval);
+
+    progress = 100;
+    bar.style.width = '100%';
+
+    setTimeout(() => {
+      const loading = document.getElementById('loading');
+      if (!loading) return;
+
+      loading.classList.add('hide');
+
+      setTimeout(() => {
+        loading.remove();
+      }, 750);
+    }, 400);
+  }, remainingTime);
+}
+
+heroImg.onload = () => {
+  imageReady = true;
+  tryHide();
+};
+
+heroImg.onerror = () => {
+  imageReady = true;
+  tryHide();
+};
+
+window.addEventListener('flutter-first-frame', () => {
+  flutterReady = true;
+  tryHide();
+});
+</script>
+
 </body>
 </html>
