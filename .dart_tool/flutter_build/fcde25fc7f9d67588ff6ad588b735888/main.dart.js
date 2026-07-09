@@ -77692,7 +77692,7 @@ a0B(a,b,c,d,e){return this.Jc(a,b,c,d,!1,e)},
 Jb(a,b,c,d,e){return this.Jc(a,b,c,d,e,!1)}}
 A.NC.prototype={
 N(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=null,f=h.c,e=f?"\u0645\u062d\u0637\u0627\u062a \u0631\u062d\u0644\u062a\u0646\u0627":"Celebration Details"
-e=A.bh(e,g,g,g,A.pL().$4$color$fontSize$fontWeight$letterSpacing(B.d4,11,B.L,3.5),g,g)
+e=A.bh(e,g,g,g,A.pL().$3$color$fontSize$fontWeight(B.d4,11,B.L),g,g)
 s=f?"\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0627\u062d\u062a\u0641\u0627\u0644":"Details"
 s=A.bh(s,g,g,g,f?B.yN:A.ux().$4$color$fontSize$fontStyle$fontWeight(B.Q,36,B.aF,B.aG),B.aC,g)
 r=f?"\u0627\u0644\u062a\u0627\u0631\u064a\u062e \u0648\u0627\u0644\u0648\u0642\u062a":"Date & Time"
@@ -77879,7 +77879,7 @@ N(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a=null
 if(b.r){s=b.a.c
 r=b.x
 q=s?"\u0634\u0643\u0631\u0627\u064b "+r+"! \ud83d\udc99":"Thank you, "+r+"! \ud83d\udc99"
-if(b.f)p=s?"\u0648\u0635\u0644\u062a \u0631\u0633\u0627\u0644\u062a\u0643 \u0648\u0641\u0631\u0651\u062d\u062a \u0642\u0644\u0628\u0646\u0627 \ud83c\udf89\n\u0641\u064a \u0627\u0646\u062a\u0638\u0627\u0631 \u0641\u0631\u062d\u062a\u0646\u0627 \u0628\u064a\u0643 \u064a\u0648\u0645 \u0633\u0628\u0648\u0639 \u0643\u064a\u0631\u0644\u0633!":"Your message reached us and filled our hearts \ud83c\udf89\nWe cannot wait to celebrate with you!"
+if(b.f)p=s?"\u0648\u0635\u0644\u062a \u0631\u0633\u0627\u0644\u062a\u0643 \u0648\u0641\u0631\u0651\u062d\u062a \u0642\u0644\u0628\u0646\u0627 \ud83c\udf89\n\u0641\u064a \u0627\u0646\u062a\u0638\u0627\u0631 \u0641\u0631\u062d\u062a\u0646\u0627 \u0628\u064a\u0643 \u064a\u0648\u0645 \u0633\u0628\u0648\u0639 \u062c\u0627\u0646!":"Your message reached us and filled our hearts \ud83c\udf89\nWe cannot wait to celebrate with you!"
 else p=s?"\u0648\u0635\u0644\u062a \u0631\u0633\u0627\u0644\u062a\u0643 \ud83d\udc99\n\u0633\u0646\u0634\u062a\u0627\u0642 \u0644\u0643\u0645\u060c \u0648\u0646\u062d\u0645\u0644 \u0644\u0643\u0645 \u0627\u0644\u0645\u062d\u0628\u0629 \u062f\u0627\u0626\u0645\u0627\u064b.":"Your message reached us \ud83d\udc99\nWe will miss you and always hold you in our hearts."
 r=A.di(28)
 o=A.l8(A.ar(102,B.b3.A()>>>16&255,B.b3.A()>>>8&255,B.b3.A()&255),1.5)
